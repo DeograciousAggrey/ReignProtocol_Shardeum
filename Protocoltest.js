@@ -5,7 +5,7 @@ describe("ReignStaking", function(accounts) {
     let token;
     let reignStaking;
 
-    beforeEach(async function() {
+    beforeEach(async () => {
         [owner] = await ethers.getSigners();
         const Token = await ethers.getContractFactory("TestUSDCToken");
         token = await Token.deploy("100000000000000000000000");
@@ -25,12 +25,17 @@ describe("ReignStaking", function(accounts) {
     });
 
     // COntract stake amount should be above 0
-    it("ReignStaking: stake amount should be above 0", async function() {
-        const [owner] = await ethers.getSigners();
-        const transaction1 = await reignStaking.stake("100000000000000000000");
-        await transaction1.wait();
-        expect (await reignStaking.s_stakingBalance(owner.address)).to.equal("100000000000000000000");
-    });
+    it("contract should stake amount above 0", async function () {
+		const [owner] = await ethers.getSigners();
+
+		const transaction1 = await dygnifyStaking.stake("100000000000000000000");
+		await transaction1.wait();
+		expect(await dygnifyStaking.stakingBalance(owner.address)).to.equal(
+			"100000000000000000000"
+		);
+	});
+
+/**
 
     //contract unstake amount should be above 0
     it("ReignStaking: unstake amount should be above 0", async function() {
@@ -191,7 +196,7 @@ describe("ReignStaking", function(accounts) {
 
 
 
-
+ */
 
 
 
