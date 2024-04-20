@@ -17,7 +17,7 @@ import {Accounting} from "./Accounting.sol";
 import {ISeniorPool} from "../interfaces/ISeniorPool.sol";
 import {ConfigHelper} from "./ConfigHelper.sol";
 
-contract opportunityPool is BaseUpgradeablePausable, IOpportunityPool {
+contract OpportunityPool is BaseUpgradeablePausable, IOpportunityPool {
     /////////////////////////////////
     ///////   Error Messages   ///////
     /////////////////////////////////

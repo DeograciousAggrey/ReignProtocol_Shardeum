@@ -19,6 +19,8 @@ contract ReignTreasury is BaseUpgradeablePausable {
     function setWallet(address _wallet) public onlyAdmin {
         wallet = _wallet;
     }
+    
+    
 
     function initialize(ReignConfig _reignConfig) external initializer {
         require(address(_reignConfig) != address(0), "Invalid Address");

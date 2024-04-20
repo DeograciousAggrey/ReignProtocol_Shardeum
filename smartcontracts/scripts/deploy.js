@@ -161,9 +161,10 @@ const main = async () => {
         "0xfAF0F3dA2295198c0F283a9acAD37F3344137731",
         "0x406107b215a2420D09Ae300D1Ae3600002B53A5A" // New owner address
     ];
+    const reignTreasuryAddress = "0x7B27c6427C2ac50237E8C111CC67a38FDaac7b9d";
     const numConfirmationsRequired = 2;
     const contractFactorymultiSigWallet = await hre.ethers.getContractFactory("multiSigWallet");
-    const contractmultiSigWallet = await contractFactorymultiSigWallet.deploy(multisigOwners, numConfirmationsRequired);
+    const contractmultiSigWallet = await contractFactorymultiSigWallet.deploy(multisigOwners, numConfirmationsRequired, reignTreasuryAddress);
     await contractmultiSigWallet.deployed();
     console.log("multiSigWallet deployed to:", contractmultiSigWallet.address);
     const contractInfomultiSigWallet = { 
@@ -179,18 +180,18 @@ const main = async () => {
     
 
 
-    //Deploy OpportunityOrigination contract
-    const contractFactoryOpportunityOrigination = await hre.ethers.getContractFactory("OpportunityOrigination");
-    const contractOpportunityOrigination = await contractFactoryOpportunityOrigination.deploy();
-    await contractOpportunityOrigination.deployed();
-    console.log("OpportunityOrigination deployed to:", contractOpportunityOrigination.address);
-    const contractInfoOpportunityOrigination = {
-        address: contractOpportunityOrigination.address,
-        abi: contractOpportunityOrigination.interface.format("json"),
+    //Deploy OpportunityManager contract
+    const contractFactoryOpportunityManager = await hre.ethers.getContractFactory("OpportunityManager");
+    const contractOpportunityManager = await contractFactoryOpportunityManager.deploy();
+    await contractOpportunityManager.deployed();
+    console.log("OpportunityManager deployed to:", contractOpportunityManager.address);
+    const contractInfoOpportunityManager = {
+        address: contractOpportunityManager.address,
+        abi: contractOpportunityManager.interface.format("json"),
     };
-    const contractOpportunityOriginationAddress = contractOpportunityOrigination.address;
-    fs.writeFileSync('DeployFiles/OpportunityOrigination.json', JSON.stringify(contractInfoOpportunityOrigination, null, 2));
-    fs.writeFileSync('DeployFiles/OpportunityOriginationAddress.txt', contractOpportunityOriginationAddress);
+    const contractOpportunityManagerAddress = contractOpportunityManager.address;
+    fs.writeFileSync('DeployFiles/OpportunityManager.json', JSON.stringify(contractInfoOpportunityManager, null, 2));
+    fs.writeFileSync('DeployFiles/OpportunityManagerAddress.txt', contractOpportunityManagerAddress);
 
     
     //Deploy OpportunityPool contract
@@ -207,18 +208,18 @@ const main = async () => {
     fs.writeFileSync('DeployFiles/OpportunityPoolAddress.txt', contractOpportunityPoolAddress);
 
 
-    //Deploy LPToken contract
-    const contractFactoryLPToken = await hre.ethers.getContractFactory("LPToken");
-    const contractLPToken = await contractFactoryLPToken.deploy();
-    await contractLPToken.deployed();
-    console.log("LPToken deployed to:", contractLPToken.address);
-    const contractInfoLPToken = {
-        address: contractLPToken.address,
-        abi: contractLPToken.interface.format("json"),
+    //Deploy ReignCoin contract
+    const contractFactoryReignCoin = await hre.ethers.getContractFactory("ReignCoin");
+    const contractReignCoin = await contractFactoryReignCoin.deploy();
+    await contractReignCoin.deployed();
+    console.log("ReignCoin deployed to:", contractReignCoin.address);
+    const contractInfoReignCoin = {
+        address: contractReignCoin.address,
+        abi: contractReignCoin.interface.format("json"),
     };
-    const contractLPTokenAddress = contractLPToken.address;
-    fs.writeFileSync('DeployFiles/LPToken.json', JSON.stringify(contractInfoLPToken, null, 2));
-    fs.writeFileSync('DeployFiles/LPTokenAddress.txt', contractLPTokenAddress);
+    const contractReignCoinAddress = contractReignCoin.address;
+    fs.writeFileSync('DeployFiles/ReignCoin.json', JSON.stringify(contractInfoReignCoin, null, 2));
+    fs.writeFileSync('DeployFiles/ReignCoinAddress.txt', contractReignCoinAddress);
 
     //Deploy SeniorPool contract
     const contractFactorySeniorPool = await hre.ethers.getContractFactory("SeniorPool");
