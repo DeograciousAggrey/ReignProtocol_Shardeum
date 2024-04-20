@@ -1,0 +1,4 @@
+{
+  "address": "0xc8B5739423ca2fF67512403cF68C0586692635a3",
+  "abi": "[{\"type\":\"function\",\"name\":\"RAY\",\"constant\":true,\"stateMutability\":\"view\",\"payable\":false,\"inputs\":[],\"outputs\":[{\"type\":\"uint256\"}]}]"
+}

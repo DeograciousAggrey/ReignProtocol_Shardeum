@@ -32,7 +32,7 @@ module.exports = {
 		artifacts: "../frontend/src/artifacts",
 	},
 	networks: {
-		polygon_mumbai: {
+		shardeum: {
 			url: process.env.SHARDEUM_TESTNET_URL,
 			accounts: [process.env.PRIVATE_KEY],
 		},

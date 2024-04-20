@@ -17,7 +17,7 @@ interface IOpportunityManager {
         UnderReview,
         WriteOff,
         Approved,
-        Doubtful
+        Unsure
     }
 
     enum LoanType {
@@ -55,13 +55,13 @@ interface IOpportunityManager {
         uint256 InvestmentLoss;
     }
 
-    function writeOffDaysOfLoan(
+    function writeOffDaysOf(
         bytes32 _opportunityId
     ) external view returns (uint256);
 
-    function getTotalOpporunities() external view returns (uint256);
+    function getTotalOpportunities() external view returns (uint256);
 
-    function getOpportunityOfBorrower(
+    function getOpportunityOf(
         address _borrower
     ) external view returns (bytes32[] memory);
 
@@ -69,16 +69,16 @@ interface IOpportunityManager {
         CreateOpportunity memory _createOpportunity
     ) external;
 
-    function assignUnderwriter(
+    function assignUnderwriters(
         bytes32 _opportunityId,
         address _underwriter
     ) external;
 
-    function voteOnOpportunity(bytes32 _opportunityId, uint8 _status) external;
+    function voteOpportunity(bytes32 _opportunityId, uint8 _status) external;
 
-    function markDrawnDown(bytes32 _opportunityId) external;
+    function markDrawDown(bytes32 _opportunityId) external;
 
-    function isDrawndown(bytes32 _opportunityId) external view returns (bool);
+    function isDrawdown(bytes32 _opportunityId) external view returns (bool);
 
     function markRepaid(bytes32 _opportunityId) external;
 
@@ -86,7 +86,7 @@ interface IOpportunityManager {
 
     function markWriteOff(bytes32 _opportunityId, address _pool) external;
 
-    function isWrittenOff(bytes32 _opportunityId) external view returns (bool);
+    function isWriteOff(bytes32 _opportunityId) external view returns (bool);
 
     function isActive(bytes32 _opportunityId) external view returns (bool);
 
@@ -98,15 +98,15 @@ interface IOpportunityManager {
         bytes32 _opportunityId
     ) external view returns (address);
 
-    function getAllOpportunitiesOfBorrower(
+    function getAlltheOpportunitiesOf(
         address _borrower
     ) external view returns (bytes32[] memory);
 
-    function getUnderwriterOpporunities(
+    function getUnderWritersOpportunities(
         address _underwriter
     ) external view returns (bytes32[] memory);
 
-    function getOpportunityName(
+    function getOpportunityNameOf(
         bytes32 _opportunityId
     ) external view returns (string memory);
 }

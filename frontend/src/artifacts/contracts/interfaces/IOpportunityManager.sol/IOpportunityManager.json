@@ -16,7 +16,7 @@
           "type": "address"
         }
       ],
-      "name": "assignUnderwriter",
+      "name": "assignUnderwriters",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -94,7 +94,7 @@
           "type": "address"
         }
       ],
-      "name": "getAllOpportunitiesOfBorrower",
+      "name": "getAlltheOpportunitiesOf",
       "outputs": [
         {
           "internalType": "bytes32[]",
@@ -132,7 +132,7 @@
           "type": "bytes32"
         }
       ],
-      "name": "getOpportunityName",
+      "name": "getOpportunityNameOf",
       "outputs": [
         {
           "internalType": "string",
@@ -151,7 +151,7 @@
           "type": "address"
         }
       ],
-      "name": "getOpportunityOfBorrower",
+      "name": "getOpportunityOf",
       "outputs": [
         {
           "internalType": "bytes32[]",
@@ -183,7 +183,7 @@
     },
     {
       "inputs": [],
-      "name": "getTotalOpporunities",
+      "name": "getTotalOpportunities",
       "outputs": [
         {
           "internalType": "uint256",
@@ -202,7 +202,7 @@
           "type": "address"
         }
       ],
-      "name": "getUnderwriterOpporunities",
+      "name": "getUnderWritersOpportunities",
       "outputs": [
         {
           "internalType": "bytes32[]",
@@ -240,7 +240,7 @@
           "type": "bytes32"
         }
       ],
-      "name": "isDrawndown",
+      "name": "isDrawdown",
       "outputs": [
         {
           "internalType": "bool",
@@ -278,7 +278,7 @@
           "type": "bytes32"
         }
       ],
-      "name": "isWrittenOff",
+      "name": "isWriteOff",
       "outputs": [
         {
           "internalType": "bool",
@@ -297,7 +297,7 @@
           "type": "bytes32"
         }
       ],
-      "name": "markDrawnDown",
+      "name": "markDrawDown",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -346,7 +346,7 @@
           "type": "uint8"
         }
       ],
-      "name": "voteOnOpportunity",
+      "name": "voteOpportunity",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -359,7 +359,7 @@
           "type": "bytes32"
         }
       ],
-      "name": "writeOffDaysOfLoan",
+      "name": "writeOffDaysOf",
       "outputs": [
         {
           "internalType": "uint256",

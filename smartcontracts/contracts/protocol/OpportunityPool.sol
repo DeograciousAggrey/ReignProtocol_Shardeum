@@ -269,7 +269,7 @@ contract opportunityPool is BaseUpgradeablePausable, IOpportunityPool {
         whenNotPaused
         onlyBorrower
     {
-        if (opportunityManager.isDrawndown(s_opportunityID) == false)
+        if (opportunityManager.isDrawdown(s_opportunityID) == false)
             revert opportunityPool__InvalidDrawdownStatus();
         if (s_isDrawdownsPaused == false)
             revert opportunityPool__InvalidDrawdownStatus();
@@ -281,14 +281,14 @@ contract opportunityPool is BaseUpgradeablePausable, IOpportunityPool {
         s_seniorSubPoolDetails.depositedAmount = 0;
         s_juniorSubPoolDetails.depositedAmount = 0;
         s_repaymentStartTime = block.timestamp;
-        opportunityManager.markDrawnDown(s_opportunityID);
+        opportunityManager.markDrawDown(s_opportunityID);
         usdcToken.safeTransferFrom(address(this), msg.sender, amount);
     }
 
     function repayment() public override nonReentrant onlyBorrower {
         if (s_repaymentCounter <= s_totalRepayments)
             revert opportunityPool__Repaid();
-        if (opportunityManager.isDrawndown(s_opportunityID))
+        if (opportunityManager.isDrawdown(s_opportunityID))
             revert opportunityPool__InvalidDrawdownStatus();
 
         uint256 currentRepaymentTime = block.timestamp;
@@ -610,7 +610,7 @@ contract opportunityPool is BaseUpgradeablePausable, IOpportunityPool {
     function getRepaymentAmount() external view override returns (uint256) {
         if (s_repaymentCounter <= s_totalRepayments)
             revert opportunityPool__Repaid();
-        if (opportunityManager.isDrawndown(s_opportunityID))
+        if (opportunityManager.isDrawdown(s_opportunityID))
             revert opportunityPool__InvalidDrawdownStatus();
 
         uint256 amount;
@@ -741,11 +741,11 @@ contract opportunityPool is BaseUpgradeablePausable, IOpportunityPool {
         override
         returns (string memory)
     {
-        return opportunityManager.getOpportunityName(s_opportunityID);
+        return opportunityManager.getOpportunityNameOf(s_opportunityID);
     }
 
     function writeOffOpportunity() external override {
-        if (opportunityManager.isWrittenOff(s_opportunityID) == true)
+        if (opportunityManager.isWriteOff(s_opportunityID) == true)
             revert opportunityPool__InvalidOpportunityStatus();
         if (msg.sender == reignConfig.getOpportunityOrigination())
             revert opportunityPool__InvalidCaller();

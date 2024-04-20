@@ -56,7 +56,7 @@ contract ReignKeeper is
             ).nextRepaymentTime();
             if (dueTime < block.timestamp) {
                 uint256 opportunityThreshold = opportunityManager
-                    .writeOffDaysOfLoan(s_drawdownOpportunities[i]) * 86400;
+                    .writeOffDaysOf(s_drawdownOpportunities[i]) * 86400;
                 uint256 timeSinceLastPayment = block.timestamp - dueTime;
                 if (timeSinceLastPayment > opportunityThreshold) {
                     isUpkeepNeeded = true;
@@ -79,7 +79,7 @@ contract ReignKeeper is
             ).nextRepaymentTime();
             if (dueTime < block.timestamp) {
                 uint256 opportunityThreshold = opportunityManager
-                    .writeOffDaysOfLoan(s_drawdownOpportunities[i]) * 86400;
+                    .writeOffDaysOf(s_drawdownOpportunities[i]) * 86400;
                 uint256 timeSinceLastPayment = block.timestamp - dueTime;
                 if (timeSinceLastPayment > opportunityThreshold) {
                     opportunityManager.markWriteOff(
@@ -102,7 +102,7 @@ contract ReignKeeper is
 
     function addOpportunityInKeeper(bytes32 _opportunityId) external override {
         require(
-            opportunityManager.isDrawndown(_opportunityId) == true,
+            opportunityManager.isDrawdown(_opportunityId) == true,
             "ReignKeeper: opportunity is not drawn down"
         );
         require(
