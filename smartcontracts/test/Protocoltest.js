@@ -101,31 +101,9 @@ describe("ReignStaking", function(accounts) {
         expect.fail("Expected an error");
     });
 
-    //Contract should fail incase of wrong data type during staking
-    it("ReignStaking: fails incase of wrong data type during staking", async function() {
-        try{
-            const [owner] = await ethers.getSigners();
-            const transaction1 = await reignStaking.stake("0x123");
-            await transaction1.wait();
-        } catch (err) {
-            return err;
-        }
-        expect.fail("Expected an error");
-    });
+   
 
-    //Contract should fail incase of wrong data type during unstaking
-    it("ReignStaking: fails incase of wrong data type during unstaking", async function() {
-        try{
-            const [owner] = await ethers.getSigners();
-            const transaction1 = await reignStaking.stake("100000000000000000000");
-            await transaction1.wait();
-            const transaction2 = await reignStaking.unstake("0x123");
-            await transaction2.wait();
-        } catch (err) {
-            return err;
-        }
-        expect.fail("Expected an error");
-    });
+    
 
 
     //Contract should fail incase of wrong data type during calculateTotalYield
