@@ -1,5 +1,7 @@
 # Reign Protocol
 
+![Image Name](frontend\photos\P1.PNG)
+
 Reign Protocol operates as a decentralized credit infrastructure provider, facilitating connections between digital asset (crypto) investors and investment opportunities tied to small and medium-sized business (SMB) economic activities. Our platform demonstrates the practical application of a Credit Fund functioning as a borrower, which in turn aggregates and lends to small businesses.
 
 We strongly believe that embracing decentralized finance can effectively address the financial inclusion challenge by offering the following advantages:
