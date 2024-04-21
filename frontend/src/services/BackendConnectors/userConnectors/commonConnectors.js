@@ -1,5 +1,5 @@
 const { ethers } = require("ethers");
-const dygnifyToken = require("../../../artifacts/contracts/protocol/old/TestUSDCToken.sol/TestUSDCToken.json");
+const reignCoin = require("../../../artifacts/contracts/protocol/old/TestUSDCToken.sol/TestUSDCToken.json");
 const Sentry = require("@sentry/react");
 const sixDecimals = 6;
 
@@ -41,7 +41,7 @@ export const requestAccount = async (metaMask) => {
 			}
 			await provider.request({
 				method: "wallet_switchEthereumChain",
-				params: [{ chainId: "0x539" }], // chainId must be in hexadecimal numbers
+				params: [{ chainId: "0x1F92" }], // chainId must be in hexadecimal numbers
 			});
 			await provider.request({
 				method: "eth_requestAccounts",
@@ -73,14 +73,14 @@ export const isConnected = async () => {
 	try {
 	  if (window.ethereum) {
 		let chainId = await window.ethereum.request({ method: 'eth_chainId' });
-		if (chainId !== '0x539') {
+		if (chainId !== '0x1F92') {
 		  await window.ethereum.request({
 			method: "wallet_switchEthereumChain",
-			params: [{ chainId: "0x539" }],
+			params: [{ chainId: "0x1F92" }],
 		  });
 		  chainId = await window.ethereum.request({ method: 'eth_chainId' });
 		}
-		if (chainId === '0x539') {
+		if (chainId === '0x1F92') {
 		  const provider = new ethers.providers.Web3Provider(window.ethereum);
 		  await provider.send("eth_requestAccounts", []);
 		  return { success: true };
@@ -145,7 +145,7 @@ export const getWalletBal = async (address) => {
 			// console.log({ provider });
 			const contract = new ethers.Contract(
 				process.env.REACT_APP_TEST_USDCTOKEN,
-				dygnifyToken.abi,
+				reignCoin.abi,
 				provider
 			);
 			const signer = provider.getSigner();
