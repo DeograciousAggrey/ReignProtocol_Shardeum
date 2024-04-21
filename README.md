@@ -1,6 +1,6 @@
 # Reign Protocol
 
-![Image Name](frontend\photos\P1.PNG)
+![Image Name](https://github.com/DeograciousAggrey/ReignProtocol_Shardeum/assets/68210234/40cc185d-cfc5-4503-94cc-e78330a37b0f)
 
 Reign Protocol operates as a decentralized credit infrastructure provider, facilitating connections between digital asset (crypto) investors and investment opportunities tied to small and medium-sized business (SMB) economic activities. Our platform demonstrates the practical application of a Credit Fund functioning as a borrower, which in turn aggregates and lends to small businesses.
 
