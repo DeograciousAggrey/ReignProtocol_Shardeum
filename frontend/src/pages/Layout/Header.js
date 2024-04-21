@@ -16,7 +16,7 @@ const Header = ({ linkStatus, darkMode, setDarkMode, setMetaStatus }) => {
 	const [status, setStatus] = useState(false);
 	const [errormsg, setErrormsg] = useState({
 		status: false,
-		msg: "",
+		msg: "Wallet connection failed. Please try again.",
 	});
 
 	const location = useLocation();
@@ -27,28 +27,25 @@ const Header = ({ linkStatus, darkMode, setDarkMode, setMetaStatus }) => {
 		try {
 		  const getStatus = await isConnected();
 		  
-		  if (getStatus.success) {
+		  if (getStatus && getStatus.success) {
 			console.log("Wallet connected successfully");
 			setStatus(true);
 			localStorage.setItem("Wallet-Check", true);
 			setMetaStatus(true);
 		  } else {
-			if (localStorage.getItem("Wallet-Check") === "true") {
-			  console.log("Wallet previously connected");
-			  setStatus(true);
-			  setMetaStatus(true);
-			} else {
-			  console.log("Wallet connection failed:", getStatus.msg);
-			  setErrormsg({ status: !getStatus.success, msg: getStatus.msg });
-			  setStatus(false);
-			  setMetaStatus(false);
-			}
+			console.log("Wallet connection failed:", getStatus.msg);
+			setErrormsg({ status: true, msg: getStatus.msg });
+			setStatus(false);
+			setMetaStatus(false);
 		  }
 		} catch (error) {
 		  console.error("Error fetching wallet status:", error);
-		  // Handle error if needed
+		  setErrormsg({ status: true, msg: "Error connecting wallet" });
+		  setStatus(false);
+		  setMetaStatus(false);
 		}
 	  };
+	  
 	  
 
 	function hitRequestAccount() {

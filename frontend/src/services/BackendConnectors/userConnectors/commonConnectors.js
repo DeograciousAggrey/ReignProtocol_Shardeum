@@ -41,7 +41,7 @@ export const requestAccount = async (metaMask) => {
 			}
 			await provider.request({
 				method: "wallet_switchEthereumChain",
-				params: [{ chainId: "0x1F92" }], // chainId must be in hexadecimal numbers
+				params: [{ chainId: "0x1" }], // chainId must be in hexadecimal numbers
 			});
 			await provider.request({
 				method: "eth_requestAccounts",
@@ -67,36 +67,34 @@ export const requestAccount = async (metaMask) => {
 
 
 
-
 export const isConnected = async () => {
 	Sentry.captureMessage("isConnected", "info");
 	try {
 	  if (window.ethereum) {
 		let chainId = await window.ethereum.request({ method: 'eth_chainId' });
-		if (chainId !== '0x1F92') {
+		if (chainId !== '0x1') {
 		  await window.ethereum.request({
 			method: "wallet_switchEthereumChain",
-			params: [{ chainId: "0x1F92" }],
+			params: [{ chainId: "0x1" }],
 		  });
 		  chainId = await window.ethereum.request({ method: 'eth_chainId' });
 		}
-		if (chainId === '0x1F92') {
+		if (chainId === '0x1') {
 		  const provider = new ethers.providers.Web3Provider(window.ethereum);
 		  await provider.send("eth_requestAccounts", []);
 		  return { success: true };
+		} else {
+		  throw new Error("Unsupported chain ID");
 		}
 	  } else {
 		localStorage.setItem("Wallet-Check", false);
-		return {
-		  success: false,
-		  msg: "Please Install Wallet",
-		};
+		throw new Error("Please Install Wallet");
 	  }
 	} catch (error) {
 	  Sentry.captureException(error);
 	  return {
 		success: false,
-		msg: "Please Open Metamask and Connect",
+		msg: error.message || "Unknown error occurred",
 	  };
 	}
   };
