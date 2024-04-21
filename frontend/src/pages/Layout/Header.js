@@ -85,7 +85,7 @@ const Header = ({ linkStatus, darkMode, setDarkMode, setMetaStatus }) => {
 				<div className="">
 					<img
 						className="md:w-40 h-11 w-28 md:h-16 cursor-pointer"
-						src={LogoImage}
+						//src={LogoImage}
 						alt="company logo"
 						onClick={() => navigate("/")}
 					/>
