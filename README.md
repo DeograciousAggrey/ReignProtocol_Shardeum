@@ -13,3 +13,13 @@ We strongly believe that embracing decentralized finance can effectively address
 ### For Investors:
 - Empowerment of any digital asset holder to participate as a lender, supporting real-world economic activities.
 - Provision of stable and sustainable yields ranging from 10% to 25%, independent of cryptocurrency market volatility.
+
+We aim to establish a progressively decentralized community (DAO) comprising underwriters, auditors, service providers, asset originators, developers, and investors. Our incentive mechanism is designed to promote positive behavior and address centralized decision-making across the network.
+
+Our plan involves building the protocol as an infrastructure toolkit to fulfill three main purposes:
+1. Simplifying crypto and DeFi complexities for users.
+2. Providing comprehensive on and off-chain reputation and identity management, along with regulatory compliance.
+3. Enabling robust security and privacy features, such as tools for on and off-chain credit scoring, reputation management, whitelisting, compliance checks, decentralized data storage, dashboards, etc., all integrated with encryption and security measures.
+
+## SMART CONTRACTS
+The contracts are deployed on Shardeum testnet(Hackathon) in the addresses listed below
