@@ -13,7 +13,7 @@ We strongly believe that embracing decentralized finance can effectively address
 
 ### For Investors:
 - Empowerment of any digital asset holder to participate as a lender, supporting real-world economic activities.
-- Provision of stable and sustainable yields ranging from 10% to 25%, independent of cryptocurrency market volatility.
+- Provision of stable and sustainable yields ranging from 10% to 25%
 
 We aim to establish a progressively decentralized community (DAO) comprising underwriters, auditors, service providers, asset originators, developers, and investors. Our incentive mechanism is designed to promote positive behavior and address centralized decision-making across the network.
 
