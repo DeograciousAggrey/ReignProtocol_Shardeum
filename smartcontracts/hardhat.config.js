@@ -32,9 +32,11 @@ module.exports = {
 		artifacts: "../frontend/src/artifacts",
 	},
 	networks: {
-		shardeum: {
-			url: process.env.SHARDEUM_TESTNET_URL,
-			accounts: [process.env.PRIVATE_KEY],
-		},
-	},
+		"stavanger": {
+		  url: "https://sn2-stavanger-rpc.eu-north-2.gateway.fm",
+		  chainId: 686669576,
+		  accounts: [`0x${process.env.PRIVATE_KEY}`],
+		  
+		}
+	  },
 };
