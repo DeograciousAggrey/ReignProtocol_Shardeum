@@ -24,28 +24,31 @@ Our plan involves building the protocol as an infrastructure toolkit to fulfill 
 ## SMART CONTRACTS
 The contracts are deployed on Shardeum testnet(Hackathon) in the addresses listed below
 
-Accounting.sol :            0xF6a22bF3CCc89a2cDdAcC5f30AB7AaC11d04460C
-AuthorizeUser.sol :             0x9CbaCb7bDf91B0ffd8712f5e120bA15e8D42F61d
-BaseUpgradeablePausable :           0xD6d270adBF8E2428CEcf2955803a56f68686a4ee
-Borrower :          0x2f242444BBf6F19cC422AF163bFa83a4D6378Fbc
-CollateralToken :           0x137A5D76aE9E9CdE4B055804F8618DB3a94c9D0b
-ConfigHelper:           0x5EaE563994AB80e98b4bC7852426FDf627ca51CF
-ConfigOptions:          0x119b95d4D36De63b184bd4b022aC4C2f9cFDcB27
-Constants:          0xEa7e2d857AD7dd5a0AbbC11cB8668e55D2F434ED
-DSMath:             0xA1cF92f8739cDD1eb7ECbcFBDd1E623B96D5AD22
-IdentityToken:          0xfDB15D72192D956547d7a8f4cC73d950d0d12975
-Investor:           0x460dfeac039a0B5EA83204F64a54D2c48946D9ac
-MultiSign:          0xdA4FfB7F018fcf59dDF35c851dcb7C1E08abB032
-OpportunityManager:             0x038F71D9367AA59Bfe541c752457851ccB095285
-OpportunityPool:            0x0148F3ba331625572115D13b1Ef3Ff5eb52D19D9
-PauserPausable:             0xF495a7B73E091dd6346EA6401E29cDbbBf42D6d3
-ReignCoin:          0x713c0c4416348C2dEF4ff9e97e90a6a8300eb7b3
-ReignConfig:            0xCBe84a0757FaAA388DF793Da0cfDe8C89Fa2e7Ec
-ReignKeeper:            0xa6d68AAa67c655Cf26E59146e740D2F1B29ce28e
-ReignTreasury:          0x15d79Ce7c1DAF054764fcfE68764EEA51f02b47C
-SeniorPool:             0x5122403f02082213A63a0B35219FEF4Df6fAf78e
-ReignStaking:           0xd5b8f93362E3c2baE215E4191f1C3A090758AB27
-TestUSDCToken:          0x43a43d73EBb92409EeF473f64F67F86FD26E5F35
+| Contract Name            | Contract Address                                   |
+|--------------------------|----------------------------------------------------|
+| Accounting.sol           | 0xF6a22bF3CCc89a2cDdAcC5f30AB7AaC11d04460C        |
+| AuthorizeUser.sol        | 0x9CbaCb7bDf91B0ffd8712f5e120bA15e8D42F61d        |
+| BaseUpgradeablePausable  | 0xD6d270adBF8E2428CEcf2955803a56f68686a4ee        |
+| Borrower                 | 0x2f242444BBf6F19cC422AF163bFa83a4D6378Fbc        |
+| CollateralToken          | 0x137A5D76aE9E9CdE4B055804F8618DB3a94c9D0b        |
+| ConfigHelper             | 0x5EaE563994AB80e98b4bC7852426FDf627ca51CF        |
+| ConfigOptions            | 0x119b95d4D36De63b184bd4b022aC4C2f9cFDcB27        |
+| Constants                | 0xEa7e2d857AD7dd5a0AbbC11cB8668e55D2F434ED        |
+| DSMath                   | 0xA1cF92f8739cDD1eb7ECbcFBDd1E623B96D5AD22        |
+| IdentityToken            | 0xfDB15D72192D956547d7a8f4cC73d950d0d12975        |
+| Investor                 | 0x460dfeac039a0B5EA83204F64a54D2c48946D9ac        |
+| MultiSign                | 0xdA4FfB7F018fcf59dDF35c851dcb7C1E08abB032        |
+| OpportunityManager       | 0x038F71D9367AA59Bfe541c752457851ccB095285        |
+| OpportunityPool          | 0x0148F3ba331625572115D13b1Ef3Ff5eb52D19D9        |
+| PauserPausable           | 0xF495a7B73E091dd6346EA6401E29cDbbBf42D6d3        |
+| ReignCoin                | 0x713c0c4416348C2dEF4ff9e97e90a6a8300eb7b3        |
+| ReignConfig              | 0xCBe84a0757FaAA388DF793Da0cfDe8C89Fa2e7Ec        |
+| ReignKeeper              | 0xa6d68AAa67c655Cf26E59146e740D2F1B29ce28e        |
+| ReignTreasury            | 0x15d79Ce7c1DAF054764fcfE68764EEA51f02b47C        |
+| SeniorPool               | 0x5122403f02082213A63a0B35219FEF4Df6fAf78e        |
+| ReignStaking             | 0xd5b8f93362E3c2baE215E4191f1C3A090758AB27        |
+| TestUSDCToken            | 0x43a43d73EBb92409EeF473f64F67F86FD26E5F35        |
+
 
 ## HOW IT WORKS
 On the protocol, the borrower creates a loan request providing the needed details and the needed collateral document and they submit these details which are captured and stored on-chain. This request is now visible on the dashboard.
