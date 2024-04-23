@@ -32,9 +32,9 @@ module.exports = {
 		artifacts: "../frontend/src/artifacts",
 	},
 	networks: {
-		"stavanger": {
-		  url: "https://sn2-stavanger-rpc.eu-north-2.gateway.fm",
-		  chainId: 686669576,
+		"robinsponge": {
+		  url: "https://robinsponge-rpc.eu-north-2.gateway.fm",
+		  chainId: 1485363009,
 		  accounts: [`0x${process.env.PRIVATE_KEY}`],
 		  
 		}

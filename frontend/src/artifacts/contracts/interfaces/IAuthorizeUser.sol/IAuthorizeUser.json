@@ -11,7 +11,7 @@
           "type": "address"
         }
       ],
-      "name": "addToauthorizedUserList",
+      "name": "addToAuthorized",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -24,7 +24,7 @@
           "type": "address"
         }
       ],
-      "name": "isUserAuthorized",
+      "name": "isAuthorized",
       "outputs": [
         {
           "internalType": "bool",
@@ -32,7 +32,7 @@
           "type": "bool"
         }
       ],
-      "stateMutability": "nonpayable",
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -43,7 +43,7 @@
           "type": "address"
         }
       ],
-      "name": "removeFromauthorizedUserList",
+      "name": "removeFromAuthorized",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"

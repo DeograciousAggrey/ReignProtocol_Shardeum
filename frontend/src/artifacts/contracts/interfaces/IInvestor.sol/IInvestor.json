@@ -12,7 +12,7 @@
         },
         {
           "internalType": "bytes32",
-          "name": "_id",
+          "name": "_opportunityId",
           "type": "bytes32"
         }
       ],
@@ -27,9 +27,33 @@
           "internalType": "address",
           "name": "_investor",
           "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_opportunityId",
+          "type": "bytes32"
         }
       ],
-      "name": "getOpportunityOfInvestor",
+      "name": "getInvestor",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_investor",
+          "type": "address"
+        }
+      ],
+      "name": "getOpportunities",
       "outputs": [
         {
           "internalType": "bytes32[]",
@@ -49,31 +73,7 @@
         },
         {
           "internalType": "bytes32",
-          "name": "_id",
-          "type": "bytes32"
-        }
-      ],
-      "name": "isExistInInvestor",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_investor",
-          "type": "address"
-        },
-        {
-          "internalType": "bytes32",
-          "name": "_id",
+          "name": "_opportunityId",
           "type": "bytes32"
         }
       ],
