@@ -24,26 +24,30 @@ Our plan involves building the protocol as an infrastructure toolkit to fulfill 
 ## SMART CONTRACTS
 The contracts are deployed on Shardeum testnet(Hackathon) in the addresses listed below
 
-Accounting.sol : 
-AuthorizeUser.sol :
-BaseUpgradeablePausable :
-Borrower :
-CollateralToken :
-ConfigHelper: 
-ConfigOptions:
-Constants:
-DSMath:
-IdentityToken:
-Investor:
-MultiSign:
-OpportunityManager:
-OpportunityPool:
-PauserPausable:
-ReignCoin:
-ReignConfig:
-ReignKeeper:
-ReignTreasury:
-SeniorPool:
+| Contract Name            | Contract Address                                                                                             |
+|--------------------------|--------------------------------------------------------------------------------------------------------------|
+| Accounting.sol           | [0xF6a22bF3CCc89a2cDdAcC5f30AB7AaC11d04460C](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0xF6a22bF3CCc89a2cDdAcC5f30AB7AaC11d04460C)        |
+| AuthorizeUser.sol        | [0x666144b420a3F0328203Ae6F4E4923e46b9BD49F](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0x666144b420a3F0328203Ae6F4E4923e46b9BD49F)        |
+| BaseUpgradeablePausable  | [0xD6d270adBF8E2428CEcf2955803a56f68686a4ee](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0xD6d270adBF8E2428CEcf2955803a56f68686a4ee)        |
+| Borrower                 | [0x2f242444BBf6F19cC422AF163bFa83a4D6378Fbc](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0x2f242444BBf6F19cC422AF163bFa83a4D6378Fbc)        |
+| CollateralToken          | [0xfDB15D72192D956547d7a8f4cC73d950d0d12975](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0xfDB15D72192D956547d7a8f4cC73d950d0d12975)        |
+| ConfigHelper             | [0x5EaE563994AB80e98b4bC7852426FDf627ca51CF](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0x5EaE563994AB80e98b4bC7852426FDf627ca51CF)        |
+| ConfigOptions            | [0x3Fb9A22c72D82a7e04f8a9E18142057E85dC4ad9](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0x3Fb9A22c72D82a7e04f8a9E18142057E85dC4ad9)        |
+| Constants                | [0x016BFd26CEF887d7035bB4e2228b0B34e4Ea6044](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0x016BFd26CEF887d7035bB4e2228b0B34e4Ea6044)        |
+| DSMath                   | [0x95B50EEcEE17872BE46091e12A1C0FcB58dc657a](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0x95B50EEcEE17872BE46091e12A1C0FcB58dc657a)        |
+| IdentityToken            | [0x460dfeac039a0B5EA83204F64a54D2c48946D9ac](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0x460dfeac039a0B5EA83204F64a54D2c48946D9ac)        |
+| Investor                 | [0xdA4FfB7F018fcf59dDF35c851dcb7C1E08abB032](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0xdA4FfB7F018fcf59dDF35c851dcb7C1E08abB032)        |
+| MultiSign                | [0x01f444a94b561eD25A1162EBAAe6cc6B4b2B10CC](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0x01f444a94b561eD25A1162EBAAe6cc6B4b2B10CC)        |
+| OpportunityManager       | [0x038F71D9367AA59Bfe541c752457851ccB095285](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0x038F71D9367AA59Bfe541c752457851ccB095285)        |
+| OpportunityPool          | [0x0148F3ba331625572115D13b1Ef3Ff5eb52D19D9](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0x0148F3ba331625572115D13b1Ef3Ff5eb52D19D9)        |
+| PauserPausable           | [0xF495a7B73E091dd6346EA6401E29cDbbBf42D6d3](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0xF495a7B73E091dd6346EA6401E29cDbbBf42D6d3)        |
+| ReignCoin                | [0x713c0c4416348C2dEF4ff9e97e90a6a8300eb7b3](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0x713c0c4416348C2dEF4ff9e97e90a6a8300eb7b3)        |
+| ReignConfig              | [0xECB8a4b244Fab4bD7A5D9582C315DeDb76302F25](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0xECB8a4b244Fab4bD7A5D9582C315DeDb76302F25)        |
+| ReignKeeper              | [0xa6d68AAa67c655Cf26E59146e740D2F1B29ce28e](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0xa6d68AAa67c655Cf26E59146e740D2F1B29ce28e)        |
+| ReignTreasury            | [0x0233C4c89Fa86f1291C2F62a15d391f4Dc23d39b](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0x0233C4c89Fa86f1291C2F62a15d391f4Dc23d39b)        |
+| SeniorPool               | [0x5122403f02082213A63a0B35219FEF4Df6fAf78e](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0x5122403f02082213A63a0B35219FEF4Df6fAf78e)        |
+| NFTMinter                | [0x4c4d51942CefdFC482942784c21aFF09bC70dD19](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0x4c4d51942CefdFC482942784c21aFF09bC70dD19)        |
+| TestUSDCToken            | [0xFD88459c68A7347f21Caa2Df0F382a5ceA80a9f4](https://robinsponge-blockscout.eu-north-2.gateway.fm/address/0xFD88459c68A7347f21Caa2Df0F382a5ceA80a9f4)        |
 
 
 
