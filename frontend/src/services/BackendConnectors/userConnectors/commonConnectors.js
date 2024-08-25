@@ -1,7 +1,118 @@
+const React = require("react");
+const { createContext, useState, useCallback } = require("react");
+const { Modal, message } = require("antd");
 const { ethers } = require("ethers");
 const reignCoin = require("../../../artifacts/contracts/protocol/old/TestUSDCToken.sol/TestUSDCToken.json");
 const Sentry = require("@sentry/react");
 const sixDecimals = 6;
+
+export const WalletContext = createContext();
+const desiredNetwork = '0x1F92'; // Equivalent to 8082 in decimal
+
+
+// export const WalletProvider = ({ children }) => {
+// 		const [selectedAddress, setSelectedAddress] = useState(null);
+// 		const [balance, setBalance] = useState(null);
+// 		const [isConnected, setConnected] = useState(false);
+// 		const [visible, setVisible] = useState(false);
+// 		const [signer, setSigner] = useState(null);
+
+// 		const updateBalance = useCallback(async (account) => {
+// 		const provider = new ethers.providers.Web3Provider(window.ethereum);
+// 		const balance = await provider.getBalance(account);
+// 		setBalance(ethers.utils.formatEther(balance));
+// 	    }, []);
+
+
+// 		const connectWallet = useCallback(async () => {
+// 			if (window.ethereum) {
+// 			  try {
+// 				const provider = new ethers.providers.Web3Provider(window.ethereum);
+// 				const chainId = await provider
+// 				  .getNetwork()
+// 				  .then((network) => network.chainId);
+// 				if (chainId !== desiredNetwork) {
+// 				  Modal.warning({
+// 					title: "Wrong Network",
+// 					content: "Please connect to the Shardeum Sphinx network.",
+// 				  });
+// 				  return;
+// 				}
+		
+// 				// Set signer
+// 				const signerInstance = provider.getSigner();
+// 				setSigner(signerInstance);
+		
+// 				const accounts = await window.ethereum.request({
+// 				  method: "eth_requestAccounts",
+// 				});
+// 				setSelectedAddress(accounts[0]);
+// 				await updateBalance(accounts[0]);
+// 				setConnected(true);
+// 			  } catch (error) {
+// 				console.error(error);
+// 			  }
+// 			} else {
+// 			  Modal.error({
+// 				title: "Metamask is not installed",
+// 				content: "Please install it from https://metamask.io",
+// 			  });
+// 			}
+// 		  }, [updateBalance]);
+		
+// 		  const disconnectWallet = useCallback(() => {
+// 			setSelectedAddress(null);
+// 			setBalance(null);
+// 			setConnected(false);
+// 			setSigner(null);
+// 			message.success("Wallet disconnected");
+// 		  }, []);
+		
+// 		  return (
+// 			<WalletContext.Provider
+// 			  value={{
+// 				isConnected,
+// 				selectedAddress,
+// 				balance,
+// 				visible,
+// 				signer,
+// 				setConnected,
+// 				setVisible,
+// 				connectWallet,
+// 				disconnectWallet,
+// 				setSelectedAddress,
+// 				setBalance,
+// 			  }}
+// 			>
+// 			  {children}
+// 			</WalletContext.Provider>
+// 		  );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// };	
+
 
 export const getEthAddress = async () => {
 	Sentry.captureMessage("getEthAddress", "info");
@@ -41,7 +152,7 @@ export const requestAccount = async (metaMask) => {
 			}
 			await provider.request({
 				method: "wallet_switchEthereumChain",
-				params: [{ chainId: "0x1" }], // chainId must be in hexadecimal numbers
+				params: [{ chainId: "0x1F92" }], // chainId must be in hexadecimal numbers
 			});
 			await provider.request({
 				method: "eth_requestAccounts",
@@ -70,33 +181,33 @@ export const requestAccount = async (metaMask) => {
 export const isConnected = async () => {
 	Sentry.captureMessage("isConnected", "info");
 	try {
-	  if (window.ethereum) {
-		let chainId = await window.ethereum.request({ method: 'eth_chainId' });
-		if (chainId !== '0x1') {
-		  await window.ethereum.request({
-			method: "wallet_switchEthereumChain",
-			params: [{ chainId: "0x1" }],
-		  });
-		  chainId = await window.ethereum.request({ method: 'eth_chainId' });
-		}
-		if (chainId === '0x1') {
-		  const provider = new ethers.providers.Web3Provider(window.ethereum);
-		  await provider.send("eth_requestAccounts", []);
-		  return { success: true };
+		if (window.ethereum) {
+		  let chainId = desiredNetwork;
+		  if (chainId !== desiredNetwork) {
+			await window.ethereum.request({
+			  method: "wallet_switchEthereumChain",
+			  params: [{ chainId: desiredNetwork }],
+			});
+			chainId = await window.ethereum.request({ method: 'eth_chainId' });
+		  }
+		  if (chainId === desiredNetwork) {
+			const provider = new ethers.providers.Web3Provider(window.ethereum);
+			await provider.send("eth_requestAccounts", []);
+			return { success: true };
+		  } else {
+			throw new Error("Unsupported chain ID");
+		  }
 		} else {
-		  throw new Error("Unsupported chain ID");
+		  localStorage.setItem("Wallet-Check", false);
+		  throw new Error("Please Install Wallet");
 		}
-	  } else {
-		localStorage.setItem("Wallet-Check", false);
-		throw new Error("Please Install Wallet");
+	  } catch (error) {
+		Sentry.captureException(error);
+		return {
+		  success: false,
+		  msg: error.message || "Unknown error occurred",
+		};
 	  }
-	} catch (error) {
-	  Sentry.captureException(error);
-	  return {
-		success: false,
-		msg: error.message || "Unknown error occurred",
-	  };
-	}
   };
   
 
@@ -189,3 +300,4 @@ export const getGasPrice = async () => {
 		};
 	}
 };
+
